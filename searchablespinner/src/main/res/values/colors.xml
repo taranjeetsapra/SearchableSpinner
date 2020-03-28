@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorShadow">#e4e4e4</color>
+    <color name="colorGreyShadow">#BDBDBD</color>
+    <color name="dark_red">#AE0D12</color>
+    <color name="light_red">#FFFF0000</color>
+    <color name="colorRed">#F44336</color>
+    <color name="colorDarkRed">#FF8880</color>
+    <color name="colorDropDownGreen">#00B050</color>
+    <color name="colorDropDownBlue">#0070C0</color>
+    <color name="colorDropDownYellow">#FFFF00</color>
+    <color name="colorDropDownRed">#FF0000</color>
+
+</resources>

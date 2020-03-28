@@ -1,0 +1,152 @@
+apply plugin: 'com.android.library'
+
+
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.0"
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.1"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+
+ext {
+    bintrayRepo = 'SearchableSpinner' // your repo name
+    bintrayName = 'searchablespinner' // has to be same as your library module name
+    publishedGroupId = 'projects.homcot.org.searchablespinner' // your module package name
+    libraryName = 'searchablespinner'
+    artifact = 'searchablespinner' // has to be same as your library module name
+    libraryDescription = 'A Custom Searchable Spinner for Android.'
+    siteUrl = 'https://github.com/taranjeetsapra/SearchableSpinner'
+    gitUrl = 'https://github.com/taranjeetsapra/SearchableSpinner.git'
+    libraryVersion = '1.1.2'
+    developerId = 'taranjeetsapra'
+    developerName = 'taranjeet singh'
+    developerEmail = 'taransapra@yahoo.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+task writeNewPom {
+    doLast{
+        pom {
+            project {
+                packaging 'aar'
+
+                // Add your description here
+                name 'SearchableSpinner'
+                description = 'A Custom Searchable Spinner for Android.'
+                url siteUrl
+
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'taranjeetsapra'
+                        name 'taranjeet singh'
+                        email 'taransapra@yahoo.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+
+                }
+            }
+        }.writeTo("$buildDir/searchable.xml")
+    }
+
+}
+
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
+/*bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        // it is the name that appears in bintray when logged
+        name = "SearchableSpinner"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+        version {
+            gpg {
+                sign = false //Determines whether to GPG sign the files. The default is false
+                passphrase = properties.getProperty("bintray.gpg.password") //Optional. The passphrase for GPG signing'
+            }
+//            mavenCentralSync {
+//                sync = true //Optional (true by default). Determines whether to sync the version to Maven Central.
+//                user = properties.getProperty("bintray.oss.user") //OSS user token
+//                password = properties.getProperty("bintray.oss.password") //OSS user password
+//                close = '1' //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
+//            }
+        }
+    }
+}*/
+
+/*publish {
+    //userOrg = 'inducesmile.com'
+    groupId = 'projects.homcot.org.searchablespinner'
+    artifactId = 'searchablespinner'
+    publishVersion = '1.0'
+    repoName = 'SearchableSpinner'
+    desc = 'The Apache Software License, Version 2.0'
+    website = 'https://github.com/taranjeetsapra/SearchableSpinner'
+}*/
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:support-annotations:28.0.0'
+}
+
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+//apply from: rootProject.file('release-bintray.gradle')
+//apply from: rootProject.file('app/release')
+//D:\AndroidStudioProjects\SearchableSpinnerSample\app\release
+//  apply plugin: 'com.novoda.bintray-release'
+
+if(project.rootProject.file('local.properties').exists()){
+    apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
+    apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SearchableSpinner">
+
+        <attr name="searchableSpinnerVisibility" format="enum"><!--Done-->
+            <enum name="Visible" value="1" />
+            <enum name="Gone" value="0" />
+        </attr>
+        <attr name="searchableSpinnerTextSize" format="dimension"/><!--Done-->
+        <attr name="searchableSpinnerInputType" format="enum"><!--Done-->
+            <enum name="searchableSpinnerPassword" value="0" />
+            <enum name="searchableSpinnerNumberPassword" value="1" />
+            <enum name="searchableSpinnerText" value="2"/>
+            <enum name="searchableSpinnerTextEmailAddress" value="3"/>
+            <enum name="searchableSpinnerNumber" value="4"/>
+            <enum name="searchableSpinnerPhone" value="5"/>
+            <enum name="searchableSpinnerNumberDecimal" value="6"/>
+        </attr>
+        <attr name="searchableSpinnerImeOptions" format="enum"><!--Done-->
+            <enum name="actionNext" value="0" />
+            <enum name="actionDone" value="1" />
+
+        </attr>
+
+        <!--<attr name="editHintEnabled" format="boolean"/>&lt;!&ndash;Done&ndash;&gt;
+        <attr name="editHintAnimationEnabled" format="boolean"/>&lt;!&ndash;Done&ndash;&gt;
+        <attr name="editErrorEnabled" format="boolean"/>&lt;!&ndash;Done&ndash;&gt;
+        <attr name="editPasswordToggleEnabled" format="boolean"/>&lt;!&ndash;Done&ndash;&gt;
+
+        <attr name="editEditInputType" format="enum">&lt;!&ndash;Done&ndash;&gt;
+            <enum name="textPassword" value="0" />
+            <enum name="numberPassword" value="1" />
+            <enum name="text" value="2"/>
+            <enum name="textEmailAddress" value="3"/>
+            <enum name="number" value="4"/>
+            <enum name="phone" value="5"/>
+
+        </attr>
+        <attr name="editHint" format="string">&lt;!&ndash;Done&ndash;&gt;
+        </attr>
+        <attr name="editText" format="string">&lt;!&ndash;Done&ndash;&gt;
+        </attr>
+        <attr name="editErrorText" format="string" />
+-->
+
+
+       <!-- <attr name="editTextColor" format="color|reference"/>
+        <attr name="editFocusable" format="boolean"/>
+        <attr name="editCursorVisible" format="boolean"/>
+        <attr name="editFocusableInTouchMode" format="boolean"/>
+        <attr name="editMaxLines" format="integer"/>
+        <attr name="editSingleLine" format="boolean"/>
+        <attr name="errorTextColor" format="color|reference" />
+
+        <attr name="successTintColor" format="color|reference" />
+        <attr name="errorTintColor" format="color|reference" />
+
+        <attr name="errorTextVisibility" format="boolean">
+            <enum name="Visible" value="1" />
+            <enum name="Gone" value="0" />
+        </attr>
+        <attr name="imageTextVisibility" format="boolean">
+            <enum name="Visible" value="1" />
+            <enum name="Gone" value="0" />
+        </attr>
+        <attr name="imageResourceValue" format="reference"/>
+
+        <attr name="floatingTextEnabled" format="boolean"/>-->
+
+       <!-- <attr name="editInputType" format="string">
+            <enum name="Visible" value="1" />
+            <enum name="Gone" value="0" />
+        </attr>-->
+    </declare-styleable>
+</resources>

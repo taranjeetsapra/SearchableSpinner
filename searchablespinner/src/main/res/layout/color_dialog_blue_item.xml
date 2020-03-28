@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/circle_blue"
+        android:id="@+id/tvSearchItemLabel"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:padding="5dp" />
+    <!--android:paddingStart="14dip"
+
+    android:textAppearance="?android:attr/textAppearanceLarge"
+      android:minHeight="?android:attr/listPreferredItemHeight"-->
+    <TextView
+
+        android:id="@+id/tvSearchItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingStart="1dip"
+        android:textColor="?android:attr/textColorAlertDialogListItem" />
+</LinearLayout>
